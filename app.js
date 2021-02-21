@@ -5,6 +5,8 @@ import cookieparser from "cookie-parser";
 import bodyparser from "body-parser";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
+import globalRouter from "./routers/globalRouter";
+import routes from "./routes";
 const app = express();
 
 //Middlewares
@@ -14,7 +16,8 @@ app.use(cookieparser());
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
 
-app.use("/user",userRouter);
-app.use("/vidio", videoRouter);
+app.use(routes.home, globalRouter);
+app.use(routes.users, userRouter);
+app.use(routes.videos, videoRouter);
 
 export default app;
