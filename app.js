@@ -7,14 +7,19 @@ import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
+import pug from "pug";
+import { localsMiddleware } from "./middlewaers";
 const app = express();
 
 //Middlewares
 app.use(helmet());
-app.use(morgan("dev"));
+app.set('view engine',"pug");
 app.use(cookieparser());
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
+app.use(morgan("dev"));
+app.use(localsMiddleware);
+
 
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
