@@ -19,6 +19,10 @@ app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
 app.use(morgan("dev"));
 app.use(localsMiddleware);
+app.use(function(req, res, next) {
+    res.setHeader("Content-Security-Policy", "script-src 'self' https://archive.org");
+    return next();
+    });
 
 
 app.use(routes.home, globalRouter);
