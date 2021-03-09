@@ -117,3 +117,5 @@ dist
 .pnp.*
 © 2021 GitHub, Inc.
 package-lock.json
+
+uploads
