@@ -13,18 +13,20 @@ const app = express();
 
 //Middlewares
 app.use(helmet());
-app.set('view engine',"pug");
-app.use("/uploads", express.static("uploads")) //epress.static() : direcriory에서 file을 보내주는 middleware
+app.set("view engine", "pug");
+app.use("/uploads", express.static("uploads")); //epress.static() : direcriory에서 file을 보내주는 middleware
 app.use(cookieparser());
-app.use(bodyparser.urlencoded({extended: true}));
+app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 app.use(morgan("dev"));
 app.use(localsMiddleware);
-app.use(function(req, res, next) {
-    res.setHeader("Content-Security-Policy", "script-src 'self' https://archive.org");
-    return next();
-    });
-
+app.use(function (req, res, next) {
+  res.setHeader(
+    "Content-Security-Policy",
+    "script-src 'self' https://archive.org"
+  );
+  return next();
+});
 
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);

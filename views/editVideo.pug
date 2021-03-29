@@ -6,4 +6,4 @@ block content
             input(type="text" value= video.title name="title" placeholder="title")
             textarea(name="description" placeholder="description")=video.description
             input(type="submit" value="Update Video")
-            a(href=routes.deleteVideo) Delete Video
+            a(href=routes.deleteVideo(video.id)) Delete Video
