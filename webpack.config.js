@@ -27,10 +27,10 @@ const config = {
                 plugins: [
                   [
                     "autoprefixer",
-                    {
+                    /*  {
                       //options
                       browsers: "cover 99.5%",
-                    },
+                    }, */
                   ],
                 ],
               },
