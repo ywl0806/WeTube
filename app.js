@@ -7,12 +7,16 @@ import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
-import pug from "pug";
 import { localsMiddleware } from "./middlewaers";
+
 const app = express();
 
 //Middlewares
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 app.set("view engine", "pug");
 app.use("/uploads", express.static("uploads")); //epress.static() : direcriory에서 file을 보내주는 middleware
 app.use("/static", express.static("static"));
