@@ -11048,12 +11048,9 @@ try {
 /*!*********************************!*\
   !*** ./assets/scss/styles.scss ***!
   \*********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ (function() {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: media query expression must begin with '('\n        on line 3 of assets/scss/styles.scss\n>> @import \"main.scss\" @import \"partials/header.scss\";\r\n   --------------------^\n\n    at processResult (C:\\MyGit\\wetude\\node_modules\\webpack\\lib\\NormalModule.js:649:19)\n    at C:\\MyGit\\wetude\\node_modules\\webpack\\lib\\NormalModule.js:743:5\n    at C:\\MyGit\\wetude\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at C:\\MyGit\\wetude\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (C:\\MyGit\\wetude\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at Object.callback (C:\\MyGit\\wetude\\node_modules\\sass-loader\\dist\\index.js:54:7)\n    at Object.done [as callback] (C:\\MyGit\\wetude\\node_modules\\neo-async\\async.js:8069:18)\n    at options.error (C:\\MyGit\\wetude\\node_modules\\node-sass\\lib\\index.js:294:32)");
 
 /***/ })
 
