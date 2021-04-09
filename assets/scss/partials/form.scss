@@ -19,6 +19,11 @@
     }
     input[type="submit"] {
       text-transform: uppercase;
+      &:hover {
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        opacity: 0.6;
+      }
     }
   }
 }

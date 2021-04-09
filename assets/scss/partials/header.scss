@@ -23,18 +23,35 @@
       &:last-child {
         justify-self: end;
         margin-right: 10px;
+        height: 100%;
       }
       ul {
         display: flex;
-        color: white;
+        color: $white;
         font-weight: 600;
         text-transform: uppercase;
-
-        li:not(:last-child) {
-          margin-right: 15px;
+        height: 100%;
+        li {
+          height: 100%;
+          //display: flex;
+          text-align: center;
+          a {
+            position: relative;
+            top: 30%;
+          }
+          &:hover {
+            transition-duration: 300ms;
+            transition-timing-function: ease-out;
+            font-size: x-large;
+            font-weight: bolder;
+            overflow: hidden;
+          }
+          &:not(:last-child) {
+            margin-right: 15px;
+          }
         }
         a:visited {
-          color: white;
+          color: $white;
         }
       }
       form {

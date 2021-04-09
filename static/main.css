@@ -164,20 +164,40 @@ input {
       justify-self: center; }
     .header .header__wrapper .header__column:last-child {
       justify-self: end;
-      margin-right: 10px; }
+      margin-right: 10px;
+      height: 100%; }
     .header .header__wrapper .header__column ul {
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
       display: -ms-flexbox;
       display: flex;
-      color: white;
+      color: whitesmoke;
       font-weight: 600;
-      text-transform: uppercase; }
-      .header .header__wrapper .header__column ul li:not(:last-child) {
-        margin-right: 15px; }
+      text-transform: uppercase;
+      height: 100%; }
+      .header .header__wrapper .header__column ul li {
+        height: 100%;
+        text-align: center; }
+        .header .header__wrapper .header__column ul li a {
+          position: relative;
+          top: 30%; }
+        .header .header__wrapper .header__column ul li:hover {
+          -webkit-transition-duration: 300ms;
+             -moz-transition-duration: 300ms;
+               -o-transition-duration: 300ms;
+                  transition-duration: 300ms;
+          -webkit-transition-timing-function: ease-out;
+             -moz-transition-timing-function: ease-out;
+               -o-transition-timing-function: ease-out;
+                  transition-timing-function: ease-out;
+          font-size: x-large;
+          font-weight: bolder;
+          overflow: hidden; }
+        .header .header__wrapper .header__column ul li:not(:last-child) {
+          margin-right: 15px; }
       .header .header__wrapper .header__column ul a:visited {
-        color: white; }
+        color: whitesmoke; }
     .header .header__wrapper .header__column form {
       width: 100%;
       padding-right: 5px; }
@@ -277,6 +297,84 @@ input {
         margin-bottom: 30px; }
     .form__container form input[type="submit"] {
       text-transform: uppercase; }
+      .form__container form input[type="submit"]:hover {
+        -webkit-transition-duration: 200ms;
+           -moz-transition-duration: 200ms;
+             -o-transition-duration: 200ms;
+                transition-duration: 200ms;
+        -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+           -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+             -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        opacity: 0.6; }
+
+.social-login {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%; }
+  .social-login button {
+    width: 100%;
+    height: 30px;
+    max-width: 300px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    float: none;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 15px;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    border-style: none;
+    -webkit-box-shadow: 2px 8px 10px #00000031, 1px 1px 2px rgba(0, 0, 0, 0.24);
+       -moz-box-shadow: 2px 8px 10px #00000031, 1px 1px 2px rgba(0, 0, 0, 0.24);
+            box-shadow: 2px 8px 10px #00000031, 1px 1px 2px rgba(0, 0, 0, 0.24); }
+    .social-login button span {
+      margin-right: 10px;
+      font-size: 20px; }
+    .social-login button:hover {
+      -webkit-transition-duration: 200ms;
+         -moz-transition-duration: 200ms;
+           -o-transition-duration: 200ms;
+              transition-duration: 200ms;
+      -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+         -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+           -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+              transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      opacity: 0.7;
+      border: 1px white solid; }
+  .social-login .social-login--github {
+    background-color: #141414;
+    color: white; }
+  .social-login .social-login--facebook {
+    background-color: #3a5998;
+    color: white; }
 
 
 /*# sourceMappingURL=main.css.map*/
