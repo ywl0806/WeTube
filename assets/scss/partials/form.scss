@@ -7,8 +7,13 @@
     width: 100%;
     max-width: 320px;
     padding: 5px;
-    input {
-      display: block;
+    label {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    textarea,
+    input:not([type="file"]) {
       width: 100%;
       padding-top: 10px;
       padding-bottom: 10px;
@@ -17,8 +22,14 @@
         margin-bottom: 30px;
       }
     }
+    input[type="file"] {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
     input[type="submit"] {
       text-transform: uppercase;
+      background-color: rgba(78, 153, 250, 0.89);
+      color: $white;
       &:hover {
         transition-duration: 200ms;
         transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
