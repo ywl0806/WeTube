@@ -6,7 +6,7 @@ import bodyparser from "body-parser";
 import passport from "passport";
 import session from "express-session";
 import MongoStore from "connect-mongo";
-import mongoose from "mongoose";
+//import mongoose from "mongoose";
 import { localsMiddleware } from "./middlewaers";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
