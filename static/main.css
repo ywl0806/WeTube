@@ -396,6 +396,8 @@ input {
   .social-login .social-login--facebook {
     background-color: #3a5998;
     color: white; }
+  .social-login a:visited {
+    color: white; }
 
 .videoBlock video {
   margin-bottom: 10px;

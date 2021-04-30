@@ -8,6 +8,8 @@ import {
   postLogin,
   githubLogin,
   postGithubLogin,
+  facebookLogin,
+  postFacebookLogin,
 } from "../controller/userController";
 import { home, search } from "../controller/videoController";
 import routes from "../routes";
@@ -25,11 +27,21 @@ globalRouter.get(routes.home, home);
 globalRouter.get(routes.search, search);
 globalRouter.get(routes.logout, onlyPrivate, logout);
 
+//github Login
 globalRouter.get(routes.github, githubLogin);
 
 globalRouter.get(
   routes.githubCallback,
   passport.authenticate("github", { failureRedirect: "/login" }),
   postGithubLogin
+);
+
+//facebook Login
+globalRouter.get(routes.facebook, facebookLogin);
+
+globalRouter.get(
+  routes.facebookCallback,
+  passport.authenticate("facebook", { failureRedirect: "/login" }),
+  postFacebookLogin
 );
 export default globalRouter;
