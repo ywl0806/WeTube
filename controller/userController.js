@@ -45,6 +45,8 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
     const user = await User.findOne({ email });
     if (user) {
       user.githubId = id;
+      user.avatarUrl = avatarUrl;
+      user.name = name;
       user.save();
       return cb(null, user);
     }
@@ -67,12 +69,14 @@ export const postGithubLogin = (req, res) => {
 export const facebookLogin = passport.authenticate("facebook");
 export const facebookLoginCallback = async (_, __, profile, cb) => {
   const {
-    _json: { id, name, email },
+    _json: { id, name, picture, email },
   } = profile;
   try {
     const user = await User.findOne({ email });
     if (user) {
-      user.githubId = id;
+      user.facebookId = id;
+      user.name = name;
+      user.avatarUrl = picture.data.url;
       user.save();
       return cb(null, user);
     }
@@ -99,8 +103,16 @@ export const users = (req, res) => {
 export const getMe = (req, res) => {
   res.render("userDetail", { pageTitle: "User Detail", user: req.user });
 };
-export const userDetail = (req, res) => {
-  res.render("userDetail", { pageTitle: "User Detail" });
+export const userDetail = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    const user = await User.findById(id);
+    res.render("userDetail", { pageTitle: "User Detail", user });
+  } catch (error) {
+    res.redirect(routes.home);
+  }
 };
 export const editProfile = (req, res) => {
   res.render("editProfile", { pageTitle: "Edit Profile" });
