@@ -1,5 +1,6 @@
 extends layouts/main
 
 block content 
-    .user__Detail 
-        |User Detail
+    .user-profile 
+        img.avatar(src=user.avatarUrl)
+        h3.profile__username=user.name

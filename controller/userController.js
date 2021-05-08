@@ -37,9 +37,9 @@ export const postLogin = passport.authenticate("local", {
 //github login
 export const githubLogin = passport.authenticate("github");
 export const githubLoginCallback = async (_, __, profile, cb) => {
+  console.log(profile);
   const {
-    // eslint-disable-next-line camelcase
-    _json: { id, avatar_url, name, email },
+    _json: { id, avatar_url: avatarUrl, name, email },
   } = profile;
   try {
     const user = await User.findOne({ email });
@@ -52,7 +52,7 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
       email,
       name,
       githubId: id,
-      avatarUrl: avatar_url,
+      avatarUrl,
     });
     return cb(null, newUser);
   } catch (error) {
@@ -95,6 +95,9 @@ export const logout = (req, res) => {
 };
 export const users = (req, res) => {
   res.render("users", { pageTitle: "Users" });
+};
+export const getMe = (req, res) => {
+  res.render("userDetail", { pageTitle: "User Detail", user: req.user });
 };
 export const userDetail = (req, res) => {
   res.render("userDetail", { pageTitle: "User Detail" });
