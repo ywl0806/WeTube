@@ -114,8 +114,19 @@ export const userDetail = async (req, res) => {
     res.redirect(routes.home);
   }
 };
-export const editProfile = (req, res) => {
-  res.render("editProfile", { pageTitle: "Edit Profile" });
+export const getEditProfile = async (req, res) => {
+  res.render("editProfile", { pageTitle: "User editProfile", user: req.user });
+};
+export const postEditProfile = async (req, res) => {
+  const {
+    body: { _id: id, avatarUrl, name, email },
+  } = req;
+  try {
+    await User.findOneAndUpdate(id, { avatarUrl, name, email });
+    res.render("editProfile", { pageTitle: "User editProfile" });
+  } catch (error) {
+    res.redirect(routes.home);
+  }
 };
 export const changePassword = (req, res) => {
   res.render("changePassword", { pageTitle: "Chang Password" });
