@@ -328,6 +328,43 @@ input {
              -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
         opacity: 0.6; }
+  .form__container .form-container__link {
+    width: 100%;
+    max-width: 320px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 5px; }
+    .form__container .form-container__link button {
+      padding: 5px;
+      width: 100%;
+      text-transform: uppercase;
+      background-color: rgba(250, 78, 78, 0.89);
+      color: whitesmoke; }
+    .form__container .form-container__link:hover {
+      -webkit-transition-duration: 200ms;
+         -moz-transition-duration: 200ms;
+           -o-transition-duration: 200ms;
+              transition-duration: 200ms;
+      -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+         -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+           -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+              transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      opacity: 0.6; }
 
 .social-login {
   display: -webkit-box;
