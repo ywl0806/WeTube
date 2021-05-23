@@ -6,6 +6,10 @@
     width: 100%;
     max-width: 850px;
     margin-top: 25px;
+    .editVideo__link {
+      float: right;
+      position: relative;
+    }
     button {
       background-color: rgb(65, 202, 226);
       border: none;
@@ -20,7 +24,8 @@
     }
     .video__title,
     .video__views,
-    .video__description {
+    .video__description,
+    .video__author {
       margin-top: 10px;
       display: block;
     }
@@ -29,10 +34,6 @@
     }
     .video__views {
       margin-top: 20px;
-    }
-    a {
-      float: right;
-      position: relative;
     }
   }
 }

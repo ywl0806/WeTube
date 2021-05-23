@@ -37,7 +37,6 @@ export const postLogin = passport.authenticate("local", {
 //github login
 export const githubLogin = passport.authenticate("github");
 export const githubLoginCallback = async (_, __, profile, cb) => {
-  console.log(profile);
   const {
     _json: { id, avatar_url: avatarUrl, name, email },
   } = profile;
@@ -121,22 +120,37 @@ export const postEditProfile = async (req, res) => {
   const {
     body: { name, email },
     file,
+    user: { _id: id },
   } = req;
   try {
-    await User.findByIdAndUpdate(req.user.id, {
+    await User.findByIdAndUpdate(id, {
       name,
       email,
-      avatarUrl: file ? file.path : req.user.avaratUrl,
+      avatarUrl: file ? file.path : req.user.avaratUrl, //file 이 없으면 req.user.avaratUrl를 줌
     });
     res.redirect(routes.me);
   } catch (error) {
-    res.render("editProfile", { pageTitle: "editProfile" });
+    res.render("editProfile", { pageTitle: "Edit Profile" });
   }
 };
 export const getChangePassword = (req, res) => {
-  console.log(req);
   res.render("changePassword", { pageTitle: "Change Password" });
 };
-export const postChangePassword = (req, res) => {
-  res.render("changePassword", { pageTitle: "Change Password" });
+export const postChangePassword = async (req, res) => {
+  const {
+    body: { oldPassword, newPassword1, newPassword2 },
+  } = req;
+  try {
+    if (newPassword1 !== newPassword2) {
+      res.status(400);
+      res.redirect(`/users${routes.changePassword}`);
+      return;
+    } else {
+      await req.user.changePassword(oldPassword, newPassword1);
+      res.redirect(routes.me);
+    }
+  } catch (error) {
+    res.status(400);
+    res.redirect(`/users${routes.changePassword}`);
+  }
 };

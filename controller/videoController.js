@@ -1,5 +1,6 @@
 import routes from "../routes";
 import Video from "../models/Video";
+import User from "../models/User";
 
 export const home = async (req, res) => {
   //async : 작업이 끝날때 까지 기다림
@@ -38,19 +39,20 @@ export const postUpload = async (req, res) => {
     fileUrl: path,
     title,
     description,
+    creator: req.user.id,
   });
-  console.log(newVideo);
-  // 할일 : 비디오 업로드 및 저장
+  req.user.videos.push(newVideo.id);
+  req.user.save();
   res.redirect(routes.videoDetail(newVideo.id));
 };
 
 export const videoDetail = async (req, res) => {
-  console.log(req);
   const {
     params: { id },
   } = req;
   try {
-    const video = await Video.findById(id);
+    const video = await await Video.findById(id).populate("creator");
+    console.log(video);
     res.render("videoDetail", { pageTitle: video.title, video });
   } catch (error) {
     console.log(error);
