@@ -28,6 +28,10 @@
     .video__author {
       margin-top: 10px;
       display: block;
+      a {
+        color: #8e44ad;
+        font-weight: bolder;
+      }
     }
     .video__title {
       font-size: 25pt;

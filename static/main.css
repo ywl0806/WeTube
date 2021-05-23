@@ -498,6 +498,12 @@ input {
     .video-detail__container .video__info .video__author {
       margin-top: 10px;
       display: block; }
+      .video-detail__container .video__info .video__title a,
+      .video-detail__container .video__info .video__views a,
+      .video-detail__container .video__info .video__description a,
+      .video-detail__container .video__info .video__author a {
+        color: #8e44ad;
+        font-weight: bolder; }
     .video-detail__container .video__info .video__title {
       font-size: 25pt; }
     .video-detail__container .video__info .video__views {
